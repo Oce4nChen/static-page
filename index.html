@@ -16,16 +16,16 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="screen-orientation" content="portrait">
 	<meta name="x5-orientation" content="portrait">
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/swiper.min.css">
-  <link rel="stylesheet" href="../css/all.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/all.css">
 	<title>bj-project</title>
 </head>
 
 <body>
 	<header class="index-header">
     <div class="index-header-address clearfloat">
-      <img src="../static/img/testbanner.png" class="avater"/>
+      <img src="static/img/testbanner.png" class="avater"/>
       <p class="team-name">李炳基-沙雕团购群</p>
     </div>
     <div class="index-header-search clearfloat">
@@ -62,13 +62,13 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="swiper-slide">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="swiper-slide">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
       </div>
       <!-- 如果需要分页器 -->
@@ -79,7 +79,7 @@
     <div class="index-list-box">
       <div class="index-item">
         <div class="index-item-img center-fa">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="index-item-info">
           <p class="index-item-title">【纯真味道】蒙牛纯牛奶200ml*12盒</p>
@@ -96,13 +96,13 @@
             <s class="index-old-price">￥59.9</s>
           </div>
           <div class="index-add-btn">
-            <img src="../static/img/testbanner.png" />
+            <img src="static/img/testbanner.png" />
           </div>
         </div>
       </div> 
       <div class="index-item">
         <div class="index-item-img center-fa">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="index-item-info">
           <p class="index-item-title">【纯真味道】蒙牛纯牛奶200ml*12盒</p>
@@ -119,13 +119,13 @@
             <s class="index-old-price">￥59.9</s>
           </div>
           <div class="index-add-btn">
-            <img src="../static/img/testbanner.png" />
+            <img src="static/img/testbanner.png" />
           </div>
         </div>
       </div>
       <div class="index-item">
         <div class="index-item-img center-fa">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="index-item-info">
           <p class="index-item-title">【纯真味道】蒙牛纯牛奶200ml*12盒</p>
@@ -142,13 +142,13 @@
             <s class="index-old-price">￥59.9</s>
           </div>
           <div class="index-add-btn">
-            <img src="../static/img/testbanner.png" />
+            <img src="static/img/testbanner.png" />
           </div>
         </div>
       </div>
       <div class="index-item">
         <div class="index-item-img center-fa">
-          <img class="center-full" src="../static/img/testbanner.png"/>
+          <img class="center-full" src="static/img/testbanner.png"/>
         </div>
         <div class="index-item-info">
           <p class="index-item-title">【纯真味道】蒙牛纯牛奶200ml*12盒</p>
@@ -165,7 +165,7 @@
             <s class="index-old-price">￥59.9</s>
           </div>
           <div class="index-add-btn">
-            <img src="../static/img/testbanner.png" />
+            <img src="static/img/testbanner.png" />
           </div>
         </div>
       </div>        
@@ -176,14 +176,9 @@
     
   </div>
 </body>
-<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
-<script type="text/javascript" src="../js/lib/swiper.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" 
-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/swiper.min.js"></script>
 <script>
-  console.log($('window'))
   $(document).ready(()=>{
     var mySwiper = new Swiper ('.swiper-container', {
       loop: true, // 循环模式选项
@@ -206,6 +201,45 @@ crossorigin="anonymous"></script>
     $('.index-nav-item').on('click',function(){
       $(this).siblings().removeClass('nav-active')
       $(this).addClass('nav-active')
+    })
+    $(window).on('scroll',function(){
+      // $('.index-nav').css('width',navWidth2)
+      // console.log($('.index-nav').offset().top - $(window).scrollTop())
+      // console.log($('.index-nav').offset().top)
+      // console.log($('.index-nav').scrollTop())
+      if($(window).scrollTop() > 44){
+        $('.index-nav').addClass('fixed-top')
+        $('.index-header').fadeOut()
+      }else {
+        $('.index-header').fadeIn()
+        $('.index-nav').removeClass('fixed-top')
+      }
+    })
+     
+    var touch1,x1,y1,touch2,x2,y2,navleft
+    var fl_w = $(".nav-box").width();
+	  var flb_w = $(".index-nav").width();
+    $('.nav-box').on('touchstart',function(e){
+      touch1 = e.originalEvent.targetTouches[0];
+      x1 = touch1.pageX;
+      y1 = touch1.pageY;
+      navleft = parseInt($(this).css("left"));
+    })
+
+    $('.nav-box').on('touchmove',function(e){
+      touch2 = e.originalEvent.targetTouches[0];
+      x2 = touch2.pageX;
+      y2 = touch2.pageY;
+      if (navleft + x2 - x1 >= 0) {
+			$(this).css("left", 0);
+      } else if (navleft + x2 - x1 <= flb_w - fl_w) {
+        $(this).css("left", flb_w - fl_w);
+      } else {
+        $(this).css("left", navleft + x2 - x1);
+      }
+      // if (Math.abs(y2 - y1) > 0) {
+      //   e.preventDefault();
+      // }
     })
   })
 </script>

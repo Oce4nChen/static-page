@@ -41,6 +41,9 @@
 }
 
 .index-nav {
+  background: #fff;
+  z-index: 8;
+  width: 100%;
   overflow-x: scroll;
 }
 
@@ -66,7 +69,14 @@
 }
 
 .nav-box {
+  height: .44rem;
   width: 100%;
+}
+
+.big-box {
+  height: .44rem;
+  width: 100%;
+  overflow-x: scroll;
 }
 
 .index-nav-item{
@@ -75,6 +85,12 @@
   height: .44rem;
   line-height: .24rem;
   display: inline-block;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .swiper-container {
