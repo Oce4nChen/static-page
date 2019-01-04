@@ -71,12 +71,9 @@
 .nav-box {
   height: .44rem;
   width: 100%;
-}
-
-.big-box {
-  height: .44rem;
-  width: 100%;
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .index-nav-item{
